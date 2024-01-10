@@ -12,8 +12,9 @@ Reduce the number of JavaScript (JS) and Cascading Style Sheets (CSS) files by c
 
 ### 3. Implement Server-Side Caching
 Utilize server-side caching mechanisms like HTTP caching headers (e.g., ETags, Last-Modified) and reverse proxies (e.g., Varnish) to store frequently accessed data. This reduces server load and speeds up content delivery to users.
-  
-    <IfModule mod_expires.c>
+      
+      # Add this code in .htaccess file
+     <IfModule mod_expires.c>
         ExpiresActive On
   
       # Images
@@ -49,7 +50,8 @@ Utilize server-side caching mechanisms like HTTP caching headers (e.g., ETags, L
 
 ### 4. Serve Compressed Data with Brotli/Gzip
 Enable Brotli or Gzip compression to reduce the size of transferred data between the server and the client's browser. Compressed files result in faster downloads and improved overall page speed.
-    
+
+    # Add this code in .htaccess file
     # Requires both mod_rewrite and mod_headers to be enabled.
     <IfModule mod_headers.c>
       # Serve brotli compressed CSS files if they exist and the client accepts gzip.
